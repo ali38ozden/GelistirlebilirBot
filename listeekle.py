@@ -17,7 +17,6 @@ def oku(okuatil):
     varmi(okuatil)  
 
 def yaz():
-    print(isimListe)
     with open("person_name.json","w")as write: 
         json.dump(isimListe,write,indent=2)
     

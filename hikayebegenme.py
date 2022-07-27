@@ -37,8 +37,7 @@ def basla():
                 sleep(0.5)
                 hikayeGirildi=True
             else:
-                hikayeGirildi=False
-                pass                                                
+                hikayeGirildi=False                                  
         except:
             hikayeGirildi=True
             print("burya dustu 1")

@@ -8,7 +8,14 @@ import Twitter
 from tkinter import *
 from tkinter import messagebox 
 from threading import Thread
+import notifypy
+yeni=notifypy.Notify()
 
+def bildirim():
+    yeni.title="Instagram"
+    yeni.message="İslemler Bitmiştir"
+    yeni.application_name="Instagram"
+    yeni.send()
 
 
 def otoB():
@@ -46,7 +53,7 @@ def OtoBaslaFun():
     global Ilk_Defa_Giris
     Ilk_Defa_Giris=False
     insta.BaslaIslem(Toplam_Islme1_Input.get(),Bir_Sayfada_KacKisi_Takip1_Input.get(),Begen_Yorum_Sayisi1_Input.get(),Ilk_Defa_Giris,kullaniciAdiInput.get(),sifreInput.get())
-
+    
 def ElIleGirisFun():
     if(kullaniciAdiInput.get()!="" and sifreInput.get()!=""):
         Ilk_Defa_Giris=True
@@ -59,19 +66,27 @@ def HikayeBegenme():
         hikayebegenme.basla()
     except:
         print("baslamadı")
-
+    bildirim()
 def TakipciCikarFun():
     try:
         takipEtmeyeniCikar.basla()
+        
+        yeni.send()
     except:
         print("takip etmeyen den çıkıldı")
         messagebox.showerror("hata","takip etmeyeyeni çıkar başarsız")
+    bildirim()
 
 def TwitterBasla():
     Twitter.basla()
+    yeni.title="Twitter1"
+    yeni.message="İslemler Bitmiştir"
+    yeni.application_name="Twitter2"
+    yeni.send()
 
 def ListeTemizle():
     jsonSil.basla()
+    bildirim()
 
 def bilgiCek():
     try:

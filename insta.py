@@ -7,8 +7,6 @@ import random
 
 
 import notifypy
-
-
 yeni=notifypy.Notify()
 
 yeni.title="Instagram"

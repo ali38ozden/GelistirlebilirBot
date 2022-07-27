@@ -26,12 +26,12 @@ def basla():
 
         if listeekle.kontrol(gelenIsim)==1:
             takipEdiyor=True
-            print("takip ediyor")
+            print("takip ediyor: {0}".format(gelenIsim))
         elif listeekle.kontrol(gelenIsim)==0:
             takipEdiyor=False
 
         if takipEdiyor==False:
-                print("bu kisi seni takip etmiyor")
+                print("bu kisi seni takip etmiyor: {0}".format(gelenIsim))
                 kacKisiCikti=1+kacKisiCikti
                 driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div/div/div/div[3]/ul/div/li["+no+"]/div/div/button/div")\
                     .click()
@@ -147,9 +147,6 @@ def basla():
     for i in b:
         no=str(i+1)
         yeniIsim=driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div/div/div/div[3]/ul/div/li["+no+"]/div/div[1]/div[2]/div[1]/span/a/span")
-        
-        print(yeniIsim.text)
-            
         kontrol(yeniIsim.text,no)
         sleep(0.2)
 
